@@ -18,7 +18,7 @@ node{
    sh 'docker build -t httpd/latest .'
    }
    stage('Docker Image Push'){
-   withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
+   withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerpassword')]) {
    sh "docker login -u sivakarthikeyan6 -p ${Dockerhub}"
     }
    sh 'docker push httpd/latest'
